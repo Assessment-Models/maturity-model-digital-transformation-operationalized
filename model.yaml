@@ -1,0 +1,32 @@
+id: maturity-model-digital-transformation-operationalized
+type: maturity-model
+name: Digital Transformation Operationalized Maturity & Assessment Model
+description: 'Digital-business maturity and assessment model. Positions digital transformation as the
+  reimagining of the organization''s business and operating model as a digital business: grounded in advanced
+  digital technology adoption (AI, agentic AI, autonomous systems, composable cloud-native platforms,
+  digital twins), expressed through novel operating models across all operating concerns, steered by customer-
+  and ecosystem-centric digital strategy, and run as a deliberate working model between humans and software
+  agents. Technology is an enabler, not the subject. Every criterion is MECE-placed, carries five evidence-anchored
+  progression levels correlated to the org''s canonical L-0..L-4 scale, and is independently assessable.'
+version: 1.0.0
+conformance:
+  contract:
+    id: maturity-scale-contract
+  source:
+    organization: technehub-labs
+    repository: dea-metamodel
+  version: '1.0'
+dependencies:
+- id: dea-maturity-bands-v2
+  reference: v1.0.0
+compatibility:
+  metamodel:
+    minimum: 1.0.0
+    maximum: <2.0.0
+  contracts:
+  - id: maturity-scale-contract
+    version: ^1.0
+  - id: maturity-model-contract
+    version: ^1.0
+  - id: conformance-contract
+    version: ^1.0
