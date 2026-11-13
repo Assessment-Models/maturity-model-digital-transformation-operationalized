@@ -1,0 +1,25 @@
+id: digital-transformation-operationalized-worked-example
+model: dea:maturity-digital-transformation-operationalized
+version: 1.0.0
+description: Worked scoring example for the Digital Transformation Operationalized maturity model. Illustrative
+  only — not a real organisation's assessment. Shows the weighted 0-100 aggregation across the six dimensions,
+  canonical v2 band resolution and the effort-adjusted value.
+aggregated_score: 74
+resolved_band: level-4-adaptive
+effort_adjusted_value: 296.0
+criterion_scores:
+- criterion: d1c1
+  score: 72
+- criterion: d2c1
+  score: 76
+- criterion: d3c1
+  score: 70
+- criterion: d4c1
+  score: 78
+- criterion: d5c1
+  score: 74
+- criterion: d6c1
+  score: 74
+aggregation: Criterion score (0-100) = (level - 1) / 4 * 100 against the model level anchors. Sub-dimension
+  score = mean of its criteria; dimension score = weighted mean of its sub-dimensions; overall = weighted
+  mean of the six dimension scores using the declared dimension weights.

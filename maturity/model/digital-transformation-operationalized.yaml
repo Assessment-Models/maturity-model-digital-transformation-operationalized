@@ -3,7 +3,7 @@ repo_id: maturity-model-digital-transformation-operationalized
 type: maturity-model
 name: Digital Transformation Operationalized Maturity & Assessment Model
 domain: digital-transformation
-version: 1.0.0
+version: 1.0.1
 metamodel_version: 1.0.0
 status: stable
 owner: Digital Transformation Office / Enterprise Architecture Lead
@@ -2092,8 +2092,9 @@ relationships:
   description: One of the canonical maturity models in the catalog
 - source_id: dea:maturity-digital-transformation-operationalized
   target_id: dea:catalog-assessment-tools
-  relationship_type: scored-by
+  relationship_type: scored-by-v2-bands
   description: Assessed via assessment instruments that map results to these levels
+  source_relationship_type: scored-by
 - source_id: dea:maturity-digital-transformation-operationalized
   target_id: dea:maturity-digital-transformation
   relationship_type: derived-from
