@@ -78,7 +78,7 @@ an additive gate (CR-AM-ORG-RES-000).
 
 This repository declares adoption of
 [AM-MODEL-REPOSITORY-STANDARD](https://github.com/Assessment-Models/maturity-model-standard)
-v1.0.0 (CR-AM-ORG-RES-000) at conformance level **`structural`** via a root
+v1.0.1 (CR-AM-ORG-RES-000) at conformance level **`structural`** via a root
 `standard.yaml` declaration. `model.yaml` remains the authoritative identity
 manifest; the standard workflow cross-checks `standard.yaml`, `model.yaml`,
 `VERSION` and this README's Status line on every push and pull request. The
