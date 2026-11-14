@@ -4,7 +4,7 @@ Digital-business maturity and assessment model. Positions digital transformation
 
 ## Status
 
-`1.0.0` · stable — canonical v2 bands, independently released
+`1.0.1` · stable — canonical v2 bands, independently released
 
 ## Placement
 
@@ -36,6 +36,7 @@ per-level effort multipliers 1.0 → 6.0:
 ```
 maturity-model-digital-transformation-operationalized/
 ├── model.yaml                       # CR-AM-11 §15 contract handshake
+├── standard.yaml                    # repository-standard declaration (CR-AM-ORG-RES-000)
 ├── VERSION
 ├── README.md
 ├── CHANGELOG.md
@@ -50,7 +51,8 @@ maturity-model-digital-transformation-operationalized/
 │   └── local_validate.py            # Level 1 validator
 └── .github/workflows/
     ├── local-model-ci.yml           # Level 1
-    └── contract-conformance.yml     # Level 2 (reusable from assessment-ci)
+    ├── contract-conformance.yml     # Level 2 (reusable from assessment-ci)
+    └── repository-standard.yml      # repository-standard conformance (reusable)
 ```
 
 ## CI levels
@@ -67,6 +69,21 @@ maturity-model-digital-transformation-operationalized/
 3. **Level 3 — ecosystem CI**: the registration record in
    `Assessment-Models/assessment-registry` is resolved by the ecosystem
    validator on every registry pull request.
+
+The **repository-standard conformance workflow**
+(`.github/workflows/repository-standard.yml`) runs alongside these levels as
+an additive gate (CR-AM-ORG-RES-000).
+
+## Repository standard
+
+This repository declares adoption of
+[AM-MODEL-REPOSITORY-STANDARD](https://github.com/Assessment-Models/maturity-model-standard)
+v1.0.0 (CR-AM-ORG-RES-000) at conformance level **`structural`** via a root
+`standard.yaml` declaration. `model.yaml` remains the authoritative identity
+manifest; the standard workflow cross-checks `standard.yaml`, `model.yaml`,
+`VERSION` and this README's Status line on every push and pull request. The
+legacy self-named directory at the repository root is retained untouched
+(migration matrix M4); deduplication is a separate owner decision.
 
 ## Provenance
 
