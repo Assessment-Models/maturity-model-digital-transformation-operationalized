@@ -1,0 +1,56 @@
+# =============================================================================
+# touchpoints.yaml — CR-AM-13 Phase 2 DRAFT (mirror record)
+# Handshake & Touchpoint Model: Digital Transformation Operationalized ↔ Operations
+# Contract: maturity-touchpoint-contract v0.1.0-draft (technehub-labs/dea-metamodel)
+# =============================================================================
+id: dea:touchpoints-digital-transformation-operationalized-v1
+repo_id: maturity-model-digital-transformation-operationalized
+version: 0.1.0-draft
+status: draft
+metamodel_version: 1.0.0
+description: >-
+  Mirrored touchpoint record(s) formalizing this model's seam with the
+  Operations Maturity Model (dea:maturity-operations), per the Handshake &
+  Touchpoint Model (CR-AM-13 §5). Reciprocity: each record mirrors a
+  touchpoint declared in Assessment-Models/maturity-model-operations on main.
+contract:
+  id: maturity-touchpoint-contract
+  version: 0.1.0-draft
+  source: { organization: technehub-labs, repository: dea-metamodel }
+
+touchpoints:
+- id: tp-digital-transformation-operationalized-x-operations
+  mirrors: tp-ops-x-dt-operationalized
+  peer_asset: dea:maturity-operations
+  peer_repo: maturity-model-operations
+  peer_touchpoint_id: tp-ops-x-dt-operationalized
+  direction: feeds
+  mapping_type: feeds
+  summary: >-
+    This model's strategy (d2c1), target operating model design (d5c2) and
+    operations-dimension evidence (d4c2, d4c10, d4c11) feed the peer's D6 and
+    D5/D1 criteria. Shared evidence is single-assessed once and cited by both
+    models.
+  overlap_resolution: >-
+    Transformation strategy, business model and TOM DESIGN are assessed HERE
+    (d2, d5c2). Human/assisted operations EXECUTION is assessed BY THE PEER.
+    Autonomy-ladder criteria (d4s2) remain this model's and
+    autonomous-operations' domain.
+  criteria_mapping:
+  - ours: d2c1              # Customer/ecosystem-centric digital strategy
+    theirs: OPS-D6-SD1-C01
+  - ours: d5c2              # Target operating model & org design
+    theirs: OPS-D6-SD2-C04
+    note: TOM design ours; ops execution of the TOM theirs
+  - ours: d4c10             # Incident response & resilience testing
+    theirs: OPS-D5-SD2-C03
+    note: shared evidence, single assessment
+  - ours: d4c2              # Closed-loop assurance & SLOs
+    theirs: OPS-D5-SD4-C10
+    note: shared evidence, single assessment
+  - ours: d4c11             # Performance & flow management
+    theirs: OPS-D1-SD1-C02
+    note: >-
+      DORA/flow telemetry shared; customer-visible delivery outcomes assessed
+      by services-delivery.
+  reciprocity: mirrors-tp-ops-x-dt-operationalized
