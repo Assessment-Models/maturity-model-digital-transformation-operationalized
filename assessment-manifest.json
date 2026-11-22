@@ -3,7 +3,7 @@
   "title": "Digital Transformation Operationalized Maturity & Assessment Model",
   "layer": "maturity-model",
   "architectural_concern": "Digital Business Transformation",
-  "version": "v1.0.1",
+  "version": "v2.0.0",
   "license": "MIT",
   "conformance_status": "structural",
   "standards_alignment": [
@@ -23,5 +23,5 @@
     "People, Culture & Human-Agent Teaming",
     "Data & the Intelligent Enterprise"
   ],
-  "description": "Digital-business maturity and assessment model. Positions digital transformation as the reimagining of the organization's business and operating model as a digital business: grounded in advanced digital technology adoption (AI, agentic AI, autonomous systems, composable cloud-native platforms, digital twins), expressed through novel operating models across all operating concerns, steered by customer- and ecosystem-centric digital strategy, and run as a deliberate working model between humans and software agents. Every criterion is MECE-placed, carries five evidence-anchored progression levels correlated to the org's canonical L-0..L-4 scale, and is independently assessable."
+  "description": "Digital-business maturity and assessment model. Positions digital transformation as the reimagining of the organization's business and operating model as a digital business: grounded in advanced digital technology adoption (AI, agentic AI, autonomous systems, composable cloud-native platforms, digital twins), expressed through novel operating models across all operating concerns, steered by customer- and ecosystem-centric digital strategy, and run as a deliberate working model between humans and software agents. Every criterion is MECE-placed, carries five evidence-anchored progression levels correlated to the org's canonical L-1..L-5 capability scale (L-0 Not Assessed), and is independently assessable."
 }

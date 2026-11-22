@@ -6,6 +6,14 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed — BREAKING
+
+- **Scale level renumbering adopted (dea-metamodel #214): `level-0-not-assessed` sentinel + capability levels `level-1..level-5` correlated to canonical L-1..L-5.** Release 2.0.0 — blocked on upstream ratification of dea-metamodel #214; do not merge before the renumbered canonical scale instance is released and CI pins are bumped.
+  - Mapping: model level N maps to canonical L-N (the legacy offset convention — model N ↔ canonical N-1 — is retired); new `level-0-not-assessed` sentinel (0 points, not a capability level) added to scale.yaml, register `scale_levels` and the correlation mapping.
+  - Unchanged: value-named level ids (`level-1-unrealized`…`level-5-leading`), level semantics, band instance `dea:maturity-bands-v2` v1.0.0 (ids, ranges, effort multipliers), 70 criteria and their numeric anchors 1..5, worked examples (band-keyed).
+  - Comparability: historical index values and bands remain valid; only the canonical correlation labels shift (+1).
+  - Lockstep consuming-side changes: VERSION/model.yaml/standard.yaml/assessment-manifest.json declare 2.0.0; scripts/local_validate.py validates the six-level scale with the Not-Assessed first-entry rule; README presents the aligned numbering.
+
 ## [1.0.1] - 2026-11-13
 
 ### Fixed

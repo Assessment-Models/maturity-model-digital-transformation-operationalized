@@ -14,9 +14,9 @@ repository:
   type: maturity-model
 standard:
   id: AM-MODEL-REPOSITORY-STANDARD
-  version: "1.0.1"
+  version: "2.0.0"
   conformance: structural
 model:
   id: maturity-model-digital-transformation-operationalized
   name: Digital Transformation Operationalized Maturity & Assessment Model
-  version: "1.0.1"
+  version: "2.0.0"
