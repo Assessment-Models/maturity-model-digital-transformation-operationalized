@@ -7,8 +7,10 @@ description: 'Digital-business maturity and assessment model. Positions digital 
   digital twins), expressed through novel operating models across all operating concerns, steered by customer-
   and ecosystem-centric digital strategy, and run as a deliberate working model between humans and software
   agents. Technology is an enabler, not the subject. Every criterion is MECE-placed, carries five evidence-anchored
-  progression levels correlated to the org''s canonical L-0..L-4 scale, and is independently assessable.'
-version: 1.0.1
+  progression levels correlated to the org''s canonical L-1..L-5 capability scale (L-0 Not Assessed
+  sentinel per dea-metamodel issue 214), and is independently assessable. Release 2.0.0 adopts the
+  aligned numbering; adoption pending canonical ratification.'
+version: 2.0.0
 conformance:
   contract:
     id: maturity-scale-contract

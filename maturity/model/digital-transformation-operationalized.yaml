@@ -3,7 +3,7 @@ repo_id: maturity-model-digital-transformation-operationalized
 type: maturity-model
 name: Digital Transformation Operationalized Maturity & Assessment Model
 domain: digital-transformation
-version: 1.0.1
+version: 2.0.0
 metamodel_version: 1.0.0
 status: stable
 owner: Digital Transformation Office / Enterprise Architecture Lead
@@ -21,22 +21,27 @@ band_reference:
   organization: technehub-labs
   repository: dea-metamodel
 scale_levels:
+- level-0-not-assessed
 - level-1-unrealized
 - level-2-proven
 - level-3-standardized
 - level-4-compounding
 - level-5-leading
 level_correlation:
-  note: 'This model''s five levels correlate 1:1 with the org''s canonical L-0..L-4 scale (dea:scale-digital-transformation-v1
-    in maturity-model-digital-transformation; CR-AM-09 v2 bands): model level N maps to canonical ordinal
-    N-1 (L-0..L-4). Primary names use the v2 state-names (Emergent/Structured/Systematic/Adaptive/Self-Optimising,
-    kept as v2_name aliases, proposal 0001); primary names denote the value state (Unrealized/Proven/Standardized/Compounding/Leading);
+  note: 'This model''s five capability levels correlate 1:1 with the org''s canonical L-1..L-5 capability scale
+    (dea:scale-digital-transformation-v1 in maturity-model-digital-transformation; CR-AM-09 v2 bands), with
+    model level N mapped to canonical L-N under the aligned numbering of dea-metamodel #214 (the legacy
+    offset convention is retired). level-0-not-assessed is the unassessed-criterion sentinel: it scores 0
+    points, lowers evidence-confidence, and never inflates the index; it is not a capability level. Primary
+    names use the v2 state-names (Emergent/Structured/Systematic/Adaptive/Self-Optimising, kept as v2_name
+    aliases, proposal 0001); primary names denote the value state (Unrealized/Proven/Standardized/Compounding/Leading);
     legacy_id/legacy_name keep v1-alpha catalog names resolvable; score_range keeps the uniform catalog
     v1-alpha bands; canonical.v2_score_range + effort_multiplier carry the non-linear v2 bands (0-20/21-45/46-70/71-88/89-100,
     multipliers 1.0/1.5/2.5/4.0/6.0) as the correlation to the canonical scale. Known semantic offset:
-    catalog v1 level-1 ''Ad Hoc'' spans canonical L-0+L-1; this model splits that bottom range via Emergent(L-0)
-    and Structured(L-1). Progression semantics match the canonical scale: linear topology, exponential
-    effort, forward-only with no skipping, exit-criteria + evidence gates, highest-conformant-level resolution.'
+    catalog v1 level-1 ''Ad Hoc'' spans canonical L-1+L-2 under the aligned numbering; this model splits that
+    bottom range via Emergent(L-1) and Structured(L-2). Progression semantics match the canonical scale:
+    linear topology, exponential effort, forward-only with no skipping, exit-criteria + evidence gates,
+    highest-conformant-level resolution.'
   mapping:
   - model_level: level-1-unrealized
     model_name: Unrealized
@@ -47,8 +52,8 @@ level_correlation:
     - 25
     legacy_id: level-1-ad-hoc
     legacy_name: Ad Hoc
-    canonical_scale_level: L-0
-    canonical_ordinal: 0
+    canonical_scale_level: L-1
+    canonical_ordinal: 1
     canonical_name: Absent
     v2_band: dea:maturity-band-emergent
     v2_score_range:
@@ -64,8 +69,8 @@ level_correlation:
     - 50
     legacy_id: level-2-defined
     legacy_name: Defined
-    canonical_scale_level: L-1
-    canonical_ordinal: 1
+    canonical_scale_level: L-2
+    canonical_ordinal: 2
     canonical_name: Piloting
     v2_band: dea:maturity-band-structured
     v2_score_range:
@@ -81,8 +86,8 @@ level_correlation:
     - 75
     legacy_id: level-3-managed
     legacy_name: Managed
-    canonical_scale_level: L-2
-    canonical_ordinal: 2
+    canonical_scale_level: L-3
+    canonical_ordinal: 3
     canonical_name: Defined
     v2_band: dea:maturity-band-systematic
     v2_score_range:
@@ -98,8 +103,8 @@ level_correlation:
     - 90
     legacy_id: level-4-quantitatively-managed
     legacy_name: Quantitatively Managed
-    canonical_scale_level: L-3
-    canonical_ordinal: 3
+    canonical_scale_level: L-4
+    canonical_ordinal: 4
     canonical_name: Scaled
     v2_band: dea:maturity-band-adaptive
     v2_score_range:
@@ -115,8 +120,8 @@ level_correlation:
     - 100
     legacy_id: level-5-optimising
     legacy_name: Optimising
-    canonical_scale_level: L-4
-    canonical_ordinal: 4
+    canonical_scale_level: L-5
+    canonical_ordinal: 5
     canonical_name: Self-Optimising
     v2_band: dea:maturity-band-self-optimising
     v2_score_range:

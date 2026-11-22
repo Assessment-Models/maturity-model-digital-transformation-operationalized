@@ -5,7 +5,8 @@ Checks:
   1. model.yaml parses and matches the Assessment-Models manifest contract
      (`Assessment-Models/assessment-ci/schemas/model-manifest.schema.json`)
   2. the §15 contract handshake is well formed (contract id + version + source)
-  3. maturity/scale.yaml declares exactly 5 levels with ordinals 0..4 and the
+  3. maturity/scale.yaml declares exactly 6 levels with ordinals 0..5 (level-0 Not Assessed
+     sentinel + capability levels level-1..level-5 per dea-metamodel #214) and the
      expected identifiers, plus a conformant ordering/progression contract
   4. maturity/model/digital-transformation-operationalized.yaml carries the model identity, and its level references
      resolve against the scale
@@ -58,7 +59,7 @@ if not src.get("organization") or not src.get("repository"):
     errors.append("model.yaml: conformance.source organization+repository are required")
 
 # 3 — scale
-EXPECTED_LEVELS = ['level-1-unrealized', 'level-2-proven', 'level-3-standardized', 'level-4-compounding', 'level-5-leading']
+EXPECTED_LEVELS = ['level-0-not-assessed', 'level-1-unrealized', 'level-2-proven', 'level-3-standardized', 'level-4-compounding', 'level-5-leading']
 levels_actual = scale.get("levels") or []
 if len(levels_actual) != len(EXPECTED_LEVELS):
     errors.append(f"scale: expected {len(EXPECTED_LEVELS)} levels, found {len(levels_actual)}")
@@ -69,6 +70,8 @@ for i, lvl in enumerate(levels_actual):
         errors.append(f"scale: unexpected level id {lvl.get('id')!r}")
     if not lvl.get("name") or not lvl.get("definition"):
         errors.append(f"scale: level {lvl.get('id')} requires name and definition")
+if levels_actual and levels_actual[0].get("name") != "Not Assessed":
+    errors.append("scale: level ordinal 0 must be the Not Assessed entry (dea-metamodel #214)")
 if scale.get("ordering") != "ascending":
     errors.append("scale: ordering must be 'ascending'")
 prog = scale.get("progression") or {}

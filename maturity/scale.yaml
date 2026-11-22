@@ -1,20 +1,30 @@
 id: dea:scale-digital-transformation-operationalized-v1
-version: 1.0.0
+version: 2.0.0
 metamodel_version: 1.0.0
 name: Digital Transformation Operationalized Maturity Scale (5-level)
-description: 'Model-owned scale for the Digital Transformation Operationalized maturity model. Five levels
-  (L0..L4) scored against the canonical v2 band instance (dea:maturity-bands-v2 v1.0.0). The level identifiers
-  and the canonical v2 ranges are taken from the model''s own level_correlation block, which records the
-  correlation to the org''s canonical L0..L4 scale (CR-AM-09 v2 bands: 0-20 / 21-45 / 46-70 / 71-88 /
-  89-100, effort multipliers 1.0 / 1.5 / 2.5 / 4.0 / 6.0).'
+description: 'Model-owned scale for the Digital Transformation Operationalized maturity model. Five capability
+  levels (level-1..level-5, aligned to the canonical L-1..L-5) scored against the canonical v2 band instance
+  (dea:maturity-bands-v2 v1.0.0). The level identifiers and the canonical v2 ranges are taken from the model''s
+  own level_correlation block, which records the correlation to the org''s canonical L-1..L-5 capability scale
+  (CR-AM-09 v2 bands: 0-20 / 21-45 / 46-70 / 71-88 / 89-100, effort multipliers 1.0 / 1.5 / 2.5 / 4.0 / 6.0).
+  Adoption of the L-0 Not Assessed + L-1..L-5 numbering follows dea-metamodel #214 and remains annotated as
+  adoption-pending until the canonical owners ratify.'
 status: stable
 ordering: ascending
 progression:
   topology: linear
   function: exponential
 levels:
-- id: level-1-unrealized
+- id: level-0-not-assessed
   ordinal: 0
+  name: Not Assessed
+  definition: 'Criterion not assessed: no evidence examined. Not a capability level: it scores 0 points
+    and lowers evidence-confidence, and it never inflates the index.'
+  characteristics:
+  - No evidence collected or verified.
+  short_description: Unassessed
+- id: level-1-unrealized
+  ordinal: 1
   name: Unrealized
   definition: 'Value unrealized: digital activity is informal and person-dependent; transformation value
     is at risk'
@@ -35,7 +45,7 @@ levels:
   - No architecture review board; decisions in chat threads
   - No AI inventory or data catalog
 - id: level-2-proven
-  ordinal: 1
+  ordinal: 2
   name: Proven
   definition: 'Value proven in governed pilots: strategy and playbooks documented, adoption still uneven'
   short_description: 'Value proven in governed pilots: strategy and playbooks documented, adoption still
@@ -56,7 +66,7 @@ levels:
   - CI/CD pipelines for most teams; security scans in pipeline for key apps
   - Data catalog live with owners assigned for critical data
 - id: level-3-standardized
-  ordinal: 2
+  ordinal: 3
   name: Standardized
   definition: 'Value standardized: digital practice is governed and tooling-enforced org-wide, so value
     is repeatable'
@@ -82,7 +92,7 @@ levels:
   - AI inventory with risk scores; runtime guardrails and audit logs
   - DTO/process-mining pipeline live for top value streams
 - id: level-4-compounding
-  ordinal: 3
+  ordinal: 4
   name: Compounding
   definition: 'Value compounding: the digital business is metrics-driven, predictive and self-adapting,
     so value scales'
@@ -108,7 +118,7 @@ levels:
   - Agent actions logged, explainable, and reversible; kill-switch tested
   - Cost and carbon per workload tracked weekly
 - id: level-5-leading
-  ordinal: 4
+  ordinal: 5
   name: Leading
   definition: 'Value leading: the digital business is self-optimizing and intent-driven end to end, setting
     benchmarks'

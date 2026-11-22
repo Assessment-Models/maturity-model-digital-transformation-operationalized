@@ -1,10 +1,10 @@
 # Digital Transformation Operationalized Maturity Model
 
-Digital-business maturity and assessment model. Positions digital transformation as the reimagining of the organization's business and operating model as a digital business: grounded in advanced digital technology adoption (AI, agentic AI, autonomous systems, composable cloud-native platforms, digital twins), expressed through novel operating models across all operating concerns, steered by customer- and ecosystem-centric digital strategy, and run as a deliberate working model between humans and software agents. Technology is an enabler, not the subject. Every criterion is MECE-placed, carries five evidence-anchored progression levels correlated to the org's canonical L-0..L-4 scale, and is independently assessable.
+Digital-business maturity and assessment model. Positions digital transformation as the reimagining of the organization's business and operating model as a digital business: grounded in advanced digital technology adoption (AI, agentic AI, autonomous systems, composable cloud-native platforms, digital twins), expressed through novel operating models across all operating concerns, steered by customer- and ecosystem-centric digital strategy, and run as a deliberate working model between humans and software agents. Technology is an enabler, not the subject. Every criterion is MECE-placed, carries five evidence-anchored progression levels correlated to the org's canonical L-1..L-5 capability scale (L-0 Not Assessed), and is independently assessable.
 
 ## Status
 
-`1.0.1` · stable — canonical v2 bands, independently released
+`2.0.0` · adoption pending [dea-metamodel #214] — canonical v2 bands, scale renumbering adopted
 
 ## Placement
 
@@ -43,7 +43,7 @@ maturity-model-digital-transformation-operationalized/
 ├── CONTRIBUTING.md
 ├── LICENSE
 ├── maturity/
-│   ├── scale.yaml                     # model-owned scale (L0..L4)
+│   ├── scale.yaml                     # model-owned scale (level-0-not-assessed + level-1..level-5)
 │   └── model/digital-transformation-operationalized.yaml
 ├── examples/
 │   └── digital-transformation-operationalized-2026.yaml
