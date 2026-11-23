@@ -134,15 +134,16 @@ scoring:
     evidence. Criterion score (0-100) = (level - 1) / 4 * 100. Sub-dimension score = mean of its criteria;
     dimension score = weighted mean of its sub-dimensions (equal weights within a dimension); overall
     score = weighted mean of dimension scores using the declared dimension weights (d1 0.20, d2 0.20,
-    d3 0.20, d4 0.15, d5 0.10, d6 0.15). The overall score is banded into the five catalog bands (0-25
-    / 26-50 / 51-75 / 76-90 / 91-100) to resolve the model level.
+    d3 0.20, d4 0.15, d5 0.10, d6 0.15). The unrounded overall score is resolved against the canonical
+    v2 bands (0-20 / 21-45 / 46-70 / 71-88 / 89-100); legacy v1 score ranges are retained only as
+    historical compatibility metadata and are not used for active scoring or level resolution.
   criterion_scale:
     min: 1
     max: 5
     meaning: level anchor matched by evidence
   aggregation: weighted-mean
-  band_resolution: catalog v1-alpha bands; level = band of overall score, capped by weakest-link rule
-    below
+  band_resolution: canonical dea:maturity-bands-v2 ranges; resolve using the unrounded 0-100 aggregate,
+    then apply mandatory-criterion and weakest-link advancement gates
   dimension_weights:
     d1: 0.2
     d2: 0.2
@@ -150,11 +151,50 @@ scoring:
     d4: 0.15
     d5: 0.1
     d6: 0.15
+  effort_adjusted_value:
+    status: normative
+    purpose: supplementary effort-adjusted index; it does not replace the 0-100 maturity score and does
+      not determine the resolved maturity level
+    formula: EAV(S) = sum(P_k(S) / M_k), for k = 1..5
+    score_input: unrounded overall score S in [0, 100]
+    band_point_allocation:
+      description: Allocate the aggregate score progressively across contiguous marginal band intervals.
+        A point is counted once, in the interval in which it falls; do not multiply the entire aggregate
+        score by the multiplier of the resolved band.
+      intervals:
+      - band: level-1-emergent
+        lower_exclusive: null
+        upper_inclusive: 20
+        points: min(S, 20)
+        multiplier: 1.0
+      - band: level-2-structured
+        lower_exclusive: 20
+        upper_inclusive: 45
+        points: max(0, min(S, 45) - 20)
+        multiplier: 1.5
+      - band: level-3-systematic
+        lower_exclusive: 45
+        upper_inclusive: 70
+        points: max(0, min(S, 70) - 45)
+        multiplier: 2.5
+      - band: level-4-adaptive
+        lower_exclusive: 70
+        upper_inclusive: 88
+        points: max(0, min(S, 88) - 70)
+        multiplier: 4.0
+      - band: level-5-self-optimising
+        lower_exclusive: 88
+        upper_inclusive: 100
+        points: max(0, S - 88)
+        multiplier: 6.0
+    maximum_unrounded_value: 53.1666666667
+    reporting_precision: 2
+    worked_example: 73.8 resolves to an effort-adjusted value of 47.62
   lite_path: 'Rapid self-assessment: one 5-point Likert question per sub-dimension (lite_question), mapped
     (1..5) to criterion levels for an indicative score; full assessment requires evidence per criterion.'
 advancement:
   progression_semantics: linear topology, exponential effort, forward-only (no level skipping), exit-criteria
-    + evidence gates, highest-conformant-level resolution - identical to the canonical L-0..L-4 scale
+    + evidence gates, highest-conformant-level resolution - identical to the canonical L-0..L-5 scale
     (see level_correlation)
   rules:
   - 'Cumulative ladder: claiming level L on any criterion requires evidence for all anchors below L (no
@@ -169,9 +209,9 @@ advancement:
   headroom_metric: delta_to_next_level = distance in points to the next band boundary, reported per dimension
     to prioritize investment.
   effort_multiplier_advisory:
-    note: 'Aligned with proposals/0001-nonlinear-maturity-scoring.md (v2 bands, advisory until CR-AM-01
-      Release 1): effort multipliers 1.0/1.5/2.5/4.0/6.0 make diminishing returns explicit; effort-adjusted
-      value = sum of points earned per band divided by its multiplier.'
+    note: Effort multipliers are applied to marginal score points earned within each canonical v2 band.
+      This is a supplementary index, not a maturity score. The effort-adjusted value is calculated by
+      dividing each band's marginal point contribution by that band's multiplier and summing the results.
     by_level:
       '1': 1.0
       '2': 1.5
