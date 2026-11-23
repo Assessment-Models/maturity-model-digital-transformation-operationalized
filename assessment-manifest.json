@@ -3,7 +3,7 @@
   "title": "Digital Transformation Operationalized Maturity & Assessment Model",
   "layer": "maturity-model",
   "architectural_concern": "Digital Business Transformation",
-  "version": "v2.0.0",
+  "version": "v2.0.1",
   "license": "MIT",
   "conformance_status": "structural",
   "standards_alignment": [

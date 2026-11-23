@@ -27,6 +27,15 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   - Comparability: historical index values and bands remain valid; only the canonical correlation labels shift (+1).
   - Lockstep consuming-side changes: VERSION/model.yaml/standard.yaml/assessment-manifest.json declare 2.0.0; scripts/local_validate.py validates the six-level scale with the Not-Assessed first-entry rule; README presents the aligned numbering.
 
+## [2.0.1] - 2026-11-23
+
+### Changed
+
+- Correct the repository-standard declaration to AM-MODEL-REPOSITORY-STANDARD v1.0.1; the previous 2.0.0 value was not a published standard version.
+- Align the model release identity across model.yaml, VERSION, standard.yaml, README and assessment-manifest.json at 2.0.1.
+- Include the typed root-manifest touchpoint declaration and draft peer-touchpoint reconciliation already merged to this repository.
+- No maturity criteria, scale semantics, scoring rules or evidence anchors changed.
+
 ## [1.0.1] - 2026-11-13
 
 ### Fixed

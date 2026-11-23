@@ -10,7 +10,7 @@ description: 'Digital-business maturity and assessment model. Positions digital 
   progression levels correlated to the org''s canonical L-1..L-5 capability scale (L-0 Not Assessed
   sentinel per dea-metamodel issue 214), and is independently assessable. Release 2.0.0 adopts the
   aligned numbering; adoption pending canonical ratification.'
-version: 2.0.0
+version: 2.0.1
 conformance:
   contract:
     id: maturity-scale-contract
