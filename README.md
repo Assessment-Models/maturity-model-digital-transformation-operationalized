@@ -10,7 +10,7 @@ The model contains **6 dimensions, 23 subdimensions, 70 criteria and 350 evidenc
 |---|---|
 | Model | Digital Transformation Operationalized Maturity & Assessment Model |
 | Canonical identifier | `dea:maturity-digital-transformation-operationalized` |
-| Repository release | `2.0.0` |
+| Repository release | `2.0.1` |
 | Model type | Maturity model |
 | Assessment structure | 6 dimensions · 23 subdimensions · 70 criteria · 350 anchors |
 | Capability scale | L-1 to L-5, with L-0 Not Assessed sentinel |
