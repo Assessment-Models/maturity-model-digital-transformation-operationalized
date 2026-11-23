@@ -6,6 +6,15 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- CR-AM-06: make canonical v2 score bands authoritative for active score resolution; retain v1-alpha ranges only as lineage metadata.
+- Define effort-adjusted value as the sum of marginal score points within each canonical band divided by that band's multiplier. EAV is supplementary and does not determine maturity level.
+- Replace the previous whole-score-times-resolved-band calculation with auditable marginal-band contributions and boundary tests.
+- Expand the worked example to show all six weighted dimension contributions, unrounded score resolution and EAV arithmetic; explicitly mark it as a partial scoring demonstration that does not evaluate assessment gates.
+- Rewrite README as reader-facing model documentation, including scoring, advancement gates, worked-example scope and layered validation.
+
+
 ### Changed — BREAKING
 
 - **Scale level renumbering adopted (dea-metamodel #214): `level-0-not-assessed` sentinel + capability levels `level-1..level-5` correlated to canonical L-1..L-5.** Release 2.0.0 — blocked on upstream ratification of dea-metamodel #214; do not merge before the renumbered canonical scale instance is released and CI pins are bumped.
