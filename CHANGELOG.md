@@ -8,6 +8,10 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- CR-AM-13 Phase 2: increment the draft touchpoint manifest to v0.1.1 and declare `touchpoints.yaml` through the model's typed manifest path. Preserve the existing reciprocal peer IDs, mirror pointers, criterion mappings and ownership boundaries; the touchpoint contract remains draft.
+
+### Changed
+
 - CR-AM-06: make canonical v2 score bands authoritative for active score resolution; retain v1-alpha ranges only as lineage metadata.
 - Define effort-adjusted value as the sum of marginal score points within each canonical band divided by that band's multiplier. EAV is supplementary and does not determine maturity level.
 - Replace the previous whole-score-times-resolved-band calculation with auditable marginal-band contributions and boundary tests.

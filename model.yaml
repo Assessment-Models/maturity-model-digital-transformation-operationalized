@@ -32,3 +32,6 @@ compatibility:
     version: ^1.0
   - id: conformance-contract
     version: ^1.0
+
+touchpoints:
+  declaration: touchpoints.yaml
