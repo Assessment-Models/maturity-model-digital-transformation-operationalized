@@ -1,25 +1,78 @@
 id: digital-transformation-operationalized-worked-example
 model: dea:maturity-digital-transformation-operationalized
-version: 1.0.0
-description: Worked scoring example for the Digital Transformation Operationalized maturity model. Illustrative
-  only — not a real organisation's assessment. Shows the weighted 0-100 aggregation across the six dimensions,
-  canonical v2 band resolution and the effort-adjusted value.
-aggregated_score: 74
-resolved_band: level-4-adaptive
-effort_adjusted_value: 296.0
-criterion_scores:
-- criterion: d1c1
+version: 2.0.0
+description: Auditable illustrative scoring example. This example demonstrates weighted aggregation,
+  canonical v2 band lookup and the supplementary effort-adjusted index. It intentionally uses dimension
+  scores rather than a complete 70-criterion evidence submission; mandatory-criterion gates, cumulative
+  anchor evidence, dimension weakest-link limits and model exit criteria are therefore not evaluated.
+assessment_scope:
+  type: partial-scoring-demonstration
+  complete_assessment: false
+  gates_evaluated: false
+dimension_scores:
+- dimension: d1
   score: 72
-- criterion: d2c1
+  weight: 0.20
+  weighted_contribution: 14.40
+- dimension: d2
   score: 76
-- criterion: d3c1
+  weight: 0.20
+  weighted_contribution: 15.20
+- dimension: d3
   score: 70
-- criterion: d4c1
+  weight: 0.20
+  weighted_contribution: 14.00
+- dimension: d4
   score: 78
-- criterion: d5c1
+  weight: 0.15
+  weighted_contribution: 11.70
+- dimension: d5
   score: 74
-- criterion: d6c1
+  weight: 0.10
+  weighted_contribution: 7.40
+- dimension: d6
   score: 74
-aggregation: Criterion score (0-100) = (level - 1) / 4 * 100 against the model level anchors. Sub-dimension
-  score = mean of its criteria; dimension score = weighted mean of its sub-dimensions; overall = weighted
-  mean of the six dimension scores using the declared dimension weights.
+  weight: 0.15
+  weighted_contribution: 11.10
+aggregated_score_unrounded: 73.8
+aggregated_score_display: 73.80
+resolved_band: level-4-adaptive
+resolved_band_name: Adaptive
+canonical_scale_level: L-4
+effort_adjusted_value:
+  formula: sum(marginal_band_points / band_effort_multiplier)
+  unrounded: 47.6166666667
+  displayed: 47.62
+  theoretical_maximum: 53.1666666667
+  contributions:
+  - band: level-1-emergent
+    marginal_points: 20
+    multiplier: 1.0
+    adjusted_contribution: 20.0
+  - band: level-2-structured
+    marginal_points: 25
+    multiplier: 1.5
+    adjusted_contribution: 16.6666666667
+  - band: level-3-systematic
+    marginal_points: 25
+    multiplier: 2.5
+    adjusted_contribution: 10.0
+  - band: level-4-adaptive
+    marginal_points: 3.8
+    multiplier: 4.0
+    adjusted_contribution: 0.95
+  - band: level-5-self-optimising
+    marginal_points: 0
+    multiplier: 6.0
+    adjusted_contribution: 0.0
+aggregation_trace:
+  method: weighted-mean
+  calculation: 72*0.20 + 76*0.20 + 70*0.20 + 78*0.15 + 74*0.10 + 74*0.15
+  result: 73.8
+  rounding: Display to two decimal places only; retain full precision for band lookup and EAV calculation.
+band_resolution_trace:
+  intervals: 0-20 / 21-45 / 46-70 / 71-88 / 89-100
+  lookup_input: 73.8
+  result: level-4-adaptive
+  note: This is the score-band result only, not a conformant final maturity determination because the
+    assessment gates listed under assessment_scope have not been evaluated.
